@@ -5,7 +5,7 @@
 using namespace std;
 using namespace std::chrono;
 
-void HardDriveBenchmark1(char * txt){
+void HardDriveBenchmark2(char * txt){
     fstream file;
 
     file.open("file.txt", ios::out | ios::app | ios::binary);
@@ -21,5 +21,11 @@ void HardDriveBenchmark1(char * txt){
         file.read(txt, 10000);
     }
     file.close();
+}
 
+int main(){
+    char text[10000];
+    for(int i = 0; i < 10000; i++){
+        text[i] = 'a';
+    }
 }
