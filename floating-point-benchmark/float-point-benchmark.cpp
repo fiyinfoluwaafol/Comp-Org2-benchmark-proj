@@ -22,3 +22,17 @@ void Calculations(){
         result = 1.5 / 1.7; // Multiplication of integer constants
     }
 }
+
+int main(){
+
+    auto start = high_resolution_clock::now();
+    Calculations();
+    auto stop = high_resolution_clock::now();
+
+    auto runTime = duration_cast<milliseconds>(stop-start);  
+    
+    double seconds = runTime.count() / 1000.0;
+    int minutes = seconds / 60;
+
+    cout << minutes << " m " << std::fmod(seconds, 60) << " s\n";
+}
