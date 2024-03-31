@@ -22,3 +22,12 @@ void Calculations(){
         result = 1 / 1; // Multiplication of integer constants
     }
 }
+
+int main(){
+
+    auto start = high_resolution_clock::now();
+    Calculations();
+    auto stop = high_resolution_clock::now();
+    
+    auto runTime = duration_cast<milliseconds>(stop-start);    
+}
